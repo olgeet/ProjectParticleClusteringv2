@@ -1,3 +1,7 @@
+This repository is a copy from the original repository [here](https://github.com/ViniciusMikuni/UCluster/ to TFv2.4) but 
+upgraded from TF verion 1.x to TF version 2.x. The only modification which was not possible to migrate is in
+[this line](https://github.com/dgedon/ProjectParticleClusteringv2/blob/main/models/gat_layers.py#L58).
+
 # Unsupervised clustering for collider physics (UCluster)
 This repo contains the main code used in the UCluster studies [public document coming soon], implemented in Tensorflow. 
 The data set used for the comparisons can be accessed from zenodo in the following links:
