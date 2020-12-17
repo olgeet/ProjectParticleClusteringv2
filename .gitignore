@@ -1,6 +1,7 @@
 .idea/
 /__pycache__/
 
+/data
 /h5/*.h5
 /logs
 /scripts/train_kmeans_latest.py
