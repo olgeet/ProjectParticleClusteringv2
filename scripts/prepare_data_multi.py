@@ -71,7 +71,6 @@ if __name__ == '__main__':
     parser.add_option("--nvoxels", type=int, default=20, help="Number of mass divisions to use")
     parser.add_option("--make_eval", action="store_true", default=False,
                       help="Only produce evaluation sample. Otherwise will produce train/test samples")
-    #parser.add_option("--dir", type="string", default="../samples/", help="Folder containing the input files")
     parser.add_option("--dir", type="string", default=os.getcwd()+"/../data/", help="Folder containing the input files")
     parser.add_option("--out", type="string", default="../h5/", help="Folder to save output files")
 
@@ -82,8 +81,6 @@ if __name__ == '__main__':
     make_eval = flags.make_eval
     samples_path = flags.dir
     save_path = flags.out
-
-    # samples_path = '/scratch/vmikuni/ML/'
 
     # Assuming that the 2 samples were saved under these respective folders
     if make_eval:
@@ -117,8 +114,6 @@ if __name__ == '__main__':
                 globs = np.concatenate((globs, glob), axis=0)
 
     NTRAIN = int(0.8 * len(labs))  # 80% of the data is used for training
-    if not os.path.isdir(save_path):
-        os.makedirs(save_path)
     if make_eval:
         with h5py.File(os.path.join(save_path, "eval_multi_{}v_{}P.h5".format(NVOXELS, NPARTS)), "w") as fh5:
             dset = fh5.create_dataset("data", data=feats)
